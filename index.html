@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kauri - Smart Financial Management</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#059669">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+
+    <!-- Social Metadata (Open Graph) -->
+    <meta property="og:title" content="Kauri - Smart Financial Management">
+    <meta property="og:description"
+        content="Kauri combines AI power and Tontine solidarity to give you total financial freedom.">
+    <meta property="og:image" content="app_screenshot.png">
+    <meta property="og:url" content="https://kauri-app.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">
+                <i class="fas fa-leaf text-gradient-gold"></i>
+                <span>KAURI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features" data-i18n="nav.features">Fonctionnalités</a></li>
+                <li><a href="#how" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+                <li><a href="#download" class="btn btn-primary" data-i18n="nav.download">Télécharger</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-blob"></div>
+        <div class="container hero-grid">
+            <div class="hero-content fade-in-up">
+                <div class="badge"
+                    style="display:inline-block; padding: 0.5rem 1rem; background: rgba(212, 175, 55, 0.2); color: var(--secondary); border-radius: 20px; margin-bottom: 1.5rem; font-weight: 600; font-size: 0.9rem;">
+                    <i class="fas fa-star" style="margin-right:0.5rem;"></i> #1 Finance App (Coming Soon)
+                </div>
+                <h1 data-i18n-html="hero.title">Gérez vos finances avec <span
+                        class="text-gradient-gold">Intelligence</span></h1>
+                <p style="color: var(--text-muted); font-size: 1.2rem; margin: 2rem 0;" data-i18n="hero.subtitle">
+                    Kauri combine la puissance de l'IA et la solidarité des Tontines pour vous offrir une liberté
+                    financière totale.
+                </p>
+                <div class="cta-group" style="display: flex; gap: 1rem;">
+                    <a href="#download" class="btn btn-primary">
+                        <span data-i18n="hero.ctaPrimary">Rejoindre la liste d'attente</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4>453</h4>
+                        <p data-i18n="hero.stat1">Places restantes</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Q1 2026</h4>
+                        <p data-i18n="hero.stat2">Date de lancement</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>50+</h4>
+                        <p data-i18n="hero.stat3">Tontines Actives</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-container fade-in-up" style="transition-delay: 0.2s;">
+                <!-- Phone Frame Wrapper -->
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <img src="app_screenshot.png" alt="Kauri App Screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" style="background: var(--bg-card);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;" class="fade-in-up">
+                <h2 data-i18n="features.title">Tout ce dont vous avez besoin.</h2>
+                <div
+                    style="width: 60px; height: 4px; background: var(--secondary); margin: 1rem auto; border-radius: 2px;">
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Feature 1 -->
+                <div class="feature-card glass fade-in-up">
+                    <div class="icon-box">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-i18n="features.tontineTitle">Tontines 2.0</h3>
+                    <p style="color: var(--text-muted); margin-top: 1rem;" data-i18n="features.tontineDesc">
+                        Créez et gérez vos tontines en toute sécurité. Rotation automatique, enchères, et transparence
+                        totale.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card glass fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="icon-box gold">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 data-i18n="features.aiTitle">Coach Financier IA</h3>
+                    <p style="color: var(--text-muted); margin-top: 1rem;" data-i18n="features.aiDesc">
+                        Un assistant personnel qui analyse vos dépenses, détecte vos abonnements et vous conseille 24/7.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card glass fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="icon-box">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 data-i18n="features.budgetTitle">Budgétisation Intelligente</h3>
+                    <p style="color: var(--text-muted); margin-top: 1rem;" data-i18n="features.budgetDesc">
+                        Des budgets qui s'adaptent à votre style de vie. Alertes de dépassement et catégorisation auto.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card glass fade-in-up" style="transition-delay: 0.3s;">
+                    <div class="icon-box gold">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 data-i18n="features.securityTitle">Sécurité Bancaire</h3>
+                    <p style="color: var(--text-muted); margin-top: 1rem;" data-i18n="features.securityDesc">
+                        Vos données sont cryptées et protégées par les meilleurs standards de l'industrie.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card glass fade-in-up" style="transition-delay: 0.4s;">
+                    <div class="icon-box">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 data-i18n="features.gamificationTitle">Défis & Gamification</h3>
+                    <p style="color: var(--text-muted); margin-top: 1rem;" data-i18n="features.gamificationDesc">
+                        Gagnez des badges et progressez dans vos niveaux en atteignant vos objectifs.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card glass fade-in-up" style="transition-delay: 0.5s;">
+                    <div class="icon-box gold">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 data-i18n="features.multiCurrencyTitle">Multi-Devises</h3>
+                    <p style="color: var(--text-muted); margin-top: 1rem;" data-i18n="features.multiCurrencyDesc">
+                        Gérez vos finances en XAF, EUR, USD avec conversion en temps réel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;" class="fade-in-up">
+                <h2 data-i18n="how.title">Simple comme bonjour.</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="how-step fade-in-up">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 data-i18n="how.step1Title">Téléchargez</h3>
+                        <p style="color: var(--text-muted);" data-i18n="how.step1Desc">Disponible bientôt sur iOS et
+                            Android.</p>
+                    </div>
+                </div>
+                <div class="how-step fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 data-i18n="how.step2Title">Créez votre profil</h3>
+                        <p style="color: var(--text-muted);" data-i18n="how.step2Desc">L'IA analyse vos besoins
+                            financiers.</p>
+                    </div>
+                </div>
+                <div class="how-step fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 data-i18n="how.step3Title">Rejoignez une Tontine</h3>
+                        <p style="color: var(--text-muted);" data-i18n="how.step3Desc">Invitez vos amis et cotisez en
+                            sécurité.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download-section">
+        <div class="container fade-in-up">
+            <h2 style="margin-bottom: 1rem;" data-i18n="download.title">Prêt à transformer vos finances ?</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;" data-i18n="download.subtitle">Soyez parmi les
+                premiers à découvrir Kauri.</p>
+
+            <div class="store-buttons">
+                <a href="#" class="store-btn">
+                    <i class="fab fa-apple" style="font-size: 2rem;"></i>
+                    <div>
+                        <span class="small-text">Download on the</span>
+                        <span class="big-text" data-i18n="download.apple">App Store</span>
+                    </div>
+                </a>
+                <a href="#" class="store-btn">
+                    <i class="fab fa-google-play" style="font-size: 1.8rem;"></i>
+                    <div>
+                        <span class="small-text">Get it on</span>
+                        <span class="big-text" data-i18n="download.google">Google Play</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="footer-links fade-in-up">
+                <a href="terms.html" data-i18n="footer.terms">Conditions d'utilisation</a>
+                <a href="privacy.html" data-i18n="footer.privacy">Politique de confidentialité</a>
+            </div>
+
+            <div style="margin-top: 2rem; opacity: 0.5; font-size: 0.8rem;">
+                <i class="fas fa-copyright"></i> <span id="year"></span> Kauri. <span data-i18n="footer.rights">Tous
+                    droits réservés.</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
