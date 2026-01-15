@@ -12,14 +12,14 @@ const translations = {
             subtitle: "Kauri combine la puissance de l'IA et la solidarité des Tontines pour vous offrir une liberté financière totale.",
             ctaPrimary: "Commencez maintenant",
             ctaSecondary: "Voir la Démo",
-            stat1: "Places restantes",
-            stat2: "Date de lancement",
-            stat3: "Tontines Actives"
+            stat1: "Coach IA disponible",
+            stat2: "Sécurité des données",
+            stat3: "Support Devises"
         },
         how: {
             title: "Simple comme bonjour.",
             step1Title: "Téléchargez",
-            step1Desc: "Disponible bientôt sur iOS et Android.",
+            step1Desc: "Disponible dès maintenant sur iOS et Android.",
             step2Title: "Créez votre profil",
             step2Desc: "L'IA analyse vos besoins financiers.",
             step3Title: "Rejoignez une Tontine",
@@ -42,7 +42,7 @@ const translations = {
         },
         download: {
             title: "Prêt à transformer vos finances ?",
-            subtitle: "Soyez parmi les premiers à découvrir Kauri.",
+            subtitle: "Disponible sur vos stores préférés.",
             apple: "App Store",
             google: "Google Play"
         },
@@ -65,14 +65,14 @@ const translations = {
             subtitle: "Kauri combines AI power and Tontine solidarity to give you total financial freedom.",
             ctaPrimary: "Start now",
             ctaSecondary: "Watch Demo",
-            stat1: "Spots left",
-            stat2: "Launch Date",
-            stat3: "Active Tontines"
+            stat1: "AI Coach Available",
+            stat2: "Data Security",
+            stat3: "Multi-Currency"
         },
         how: {
             title: "Simple as that.",
             step1Title: "Download",
-            step1Desc: "Coming soon on iOS and Android.",
+            step1Desc: "Available now on iOS and Android.",
             step2Title: "Create Profile",
             step2Desc: "AI analyzes your financial needs.",
             step3Title: "Join a Tontine",
@@ -95,7 +95,7 @@ const translations = {
         },
         download: {
             title: "Ready to transform your finances?",
-            subtitle: "Be among the first to discover Kauri.",
+            subtitle: "Available on your favorite stores.",
             apple: "App Store",
             google: "Google Play"
         },
