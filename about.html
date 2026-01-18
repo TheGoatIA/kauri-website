@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Kauri</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="about-page">
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf text-gradient-gold"></i>
+                <span>KAURI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features" data-i18n="nav.features">Fonctionnalités</a></li>
+                <li><a href="index.html#how" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+                <li><a href="about.html" class="active">À Propos</a></li>
+                <li><a href="index.html#download" class="btn btn-primary" data-i18n="nav.download">Télécharger</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="hero-blob"></div>
+        <div class="container">
+            <div class="hero-content fade-in-up" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h1 data-i18n-html="about.hero.title">L'écosystème <span class="text-gradient-gold">Premium</span></h1>
+                <p style="color: var(--text-muted); font-size: 1.2rem; margin: 2rem 0;" data-i18n="about.hero.subtitle">
+                    Kauri n'est pas qu'une simple application. C'est votre partenaire financier intelligent conçu pour
+                    sécuriser, simplifier et structurer votre argent.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Features -->
+    <section class="features-detail">
+        <div class="container feature-layout">
+            <!-- Sidebar Nav -->
+            <aside class="feature-sidebar">
+                <div class="sticky-nav">
+                    <a href="#security" class="side-link active" data-i18n="about.nav.security">Sécurité</a>
+                    <a href="#transactions" class="side-link" data-i18n="about.nav.transactions">Transactions</a>
+                    <a href="#tontines" class="side-link" data-i18n="about.nav.tontines">Tontines</a>
+                    <a href="#coach" class="side-link" data-i18n="about.nav.coach">Coach IA</a>
+                    <a href="#budget" class="side-link" data-i18n="about.nav.budget">Budgets & Objectifs</a>
+                    <a href="#gamification" class="side-link" data-i18n="about.nav.gamification">Gamification</a>
+                    <a href="#analytics" class="side-link" data-i18n="about.nav.analytics">Analyses</a>
+                    <a href="#premium" class="side-link" data-i18n="about.nav.premium">Premium</a>
+                    <a href="#invest" class="side-link" data-i18n="about.nav.invest">Investissements</a>
+                    <a href="#bills" class="side-link" data-i18n="about.nav.bills">Factures</a>
+                    <a href="#support" class="side-link" data-i18n="about.nav.support">Support</a>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="feature-scroll-content">
+
+                <!-- Security -->
+                <div id="security" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h2 data-i18n="about.features.security.title">Authentification & Sécurité</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.security.subtitle">Multi-méthodes &
+                        Biométrie</h3>
+                    <p data-i18n="about.features.security.desc">L'authentification est la première étape. Utilisez
+                        l'email, le téléphone ou vos comptes sociaux pour une connexion rapide et sécurisée.</p>
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <p data-i18n="about.features.security.use">Activez la biométrie (empreinte ou reconnaissance
+                            faciale) dans vos paramètres pour une sécurité maximale.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.security.future">A venir : Passkeys et gestion des
+                        sessions actives.</p>
+                </div>
+
+                <!-- Transactions -->
+                <div id="transactions" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h2 data-i18n="about.features.transactions.title">Gestion des Transactions</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.transactions.subtitle">Manuelle, OCR &
+                        Vocale</h3>
+                    <p data-i18n="about.features.transactions.desc">Enregistrez vos dépenses en un clin d'œil. Que ce
+                        soit manuellement, en scannant un reçu ou par simple commande vocale.</p>
+                    <div class="tip-box gold">
+                        <i class="fas fa-microphone"></i>
+                        <p data-i18n="about.features.transactions.use">Le scanner OCR extrait automatiquement les
+                            montants. La saisie vocale comprend des phrases comme 'J'ai dépensé 15 000 francs'.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.transactions.future">A venir : Détection automatique
+                        des abonnements et Open Banking.</p>
+                </div>
+
+                <!-- Tontines -->
+                <div id="tontines" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-users"></i>
+                        <h2 data-i18n="about.features.tontines.title">Tontines (Moneypools)</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.tontines.subtitle">Gestion communautaire
+                        digitale</h3>
+                    <p data-i18n="about.features.tontines.desc">Digitalisez vos pratiques d'épargne collectives. Gérez
+                        les cotisations, les rotations et le fonds social en toute transparence.</p>
+                    <div class="tip-box">
+                        <i class="fas fa-handshake"></i>
+                        <p data-i18n="about.features.tontines.use">Configurez les règles de rotation (fixe, aléatoire ou
+                            enchères) et automatisez les relances et amendes.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.tontines.future">A venir : Smart Contracts pour la
+                        libération automatique des fonds.</p>
+                </div>
+
+                <!-- Coach IA -->
+                <div id="coach" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-robot"></i>
+                        <h2 data-i18n="about.features.coach.title">Coach IA</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.coach.subtitle">Assistant financier
+                        intelligent</h3>
+                    <p data-i18n="about.features.coach.desc">Posez vos questions en langage naturel. Le coach analyse
+                        vos données pour vous aider à optimiser vos finances.</p>
+                    <div class="tip-box gold">
+                        <i class="fas fa-comment-dots"></i>
+                        <p data-i18n="about.features.coach.use">Interface de chat familière pour demander : 'Combien
+                            ai-je dépensé en restaurant ce mois-ci ?'.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.coach.future">A venir : Mode proactif pour alerter
+                        sur les denses inhabituelles.</p>
+                </div>
+
+                <!-- Budgets -->
+                <div id="budget" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h2 data-i18n="about.features.budget.title">Budgets & Objectifs</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.budget.subtitle">Planification & Épargne
+                        ciblée</h3>
+                    <p data-i18n="about.features.budget.desc">Fixez des limites par catégorie et suivez votre
+                        progression vers vos rêves financiers en temps réel.</p>
+                    <div class="tip-box">
+                        <i class="fas fa-bullseye"></i>
+                        <p data-i18n="about.features.budget.use">Créez un objectif (ex: Achat voiture) et voyez la jauge
+                            se remplir à mesure que vous épargnez.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.budget.future">A venir : Épargne 'à l'arrondi'
+                        automatique.</p>
+                </div>
+
+                <!-- Gamification -->
+                <div id="gamification" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-trophy"></i>
+                        <h2 data-i18n="about.features.gamification.title">Défis & Gamification</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.gamification.subtitle">Motivation &
+                        Récompenses</h3>
+                    <p data-i18n="about.features.gamification.desc">Rendez la gestion financière amusante avec des défis
+                        hebdomadaires et gagnez des badges de succès.</p>
+                    <div class="tip-box gold">
+                        <i class="fas fa-medal"></i>
+                        <p data-i18n="about.features.gamification.use">Participez au défi 'Zéro Dépense Inutile' et
+                            suivez votre progression dans les classements.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.gamification.future">A venir : Partenariats pour des
+                        avantages réels basés sur votre Score Kauri.</p>
+                </div>
+
+                <!-- Analytics -->
+                <div id="analytics" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h2 data-i18n="about.features.analytics.title">Analyses & Insights</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.analytics.subtitle">Compréhension
+                        approfondie</h3>
+                    <p data-i18n="about.features.analytics.desc">Visualisez vos flux d'argent grâce à des graphiques
+                        dynamiques et des insights générés par l'IA.</p>
+                    <div class="tip-box">
+                        <i class="fas fa-search-dollar"></i>
+                        <p data-i18n="about.features.analytics.use">Comparez vos revenus et dépenses sur plusieurs mois
+                            pour détecter les tendances.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.analytics.future">A venir : Prévision des soldes
+                        futurs (Cashflow forecasting).</p>
+                </div>
+
+                <!-- Premium -->
+                <div id="premium" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-star"></i>
+                        <h2 data-i18n="about.features.premium.title">Abonnements Premium</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.premium.subtitle">Puissance illimitée</h3>
+                    <p data-i18n="about.features.premium.desc">Débloquez tout le potentiel de la technologie Kauri avec
+                        le mode Premium.</p>
+                    <div class="tip-box gold">
+                        <i class="fas fa-gem"></i>
+                        <p data-i18n="about.features.premium.use">OCR illimité, analyse vocale avancée, rapports PDF
+                            détaillés et suppression des limites de tontines.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.premium.future">A venir : Partage d'abonnement
+                        familial.</p>
+                </div>
+
+                <!-- Investments -->
+                <div id="invest" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-coins"></i>
+                        <h2 data-i18n="about.features.invest.title">Placements & Investissements</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.invest.subtitle">Vue consolidée du
+                        patrimoine</h3>
+                    <p data-i18n="about.features.invest.desc">Suivez vos actifs (Actions, Crypto, Immobilier) au même
+                        endroit que vos dépenses quotidiennes.</p>
+                    <div class="tip-box">
+                        <i class="fas fa-wallet"></i>
+                        <p data-i18n="about.features.invest.use">Saisissez vos placements pour voir l'évolution de la
+                            valeur totale de votre portefeuille.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.invest.future">A venir : Synchronisation automatique
+                        avec les plateformes de trading.</p>
+                </div>
+
+                <!-- Bills -->
+                <div id="bills" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-receipt"></i>
+                        <h2 data-i18n="about.features.bills.title">Factures & Abonnements</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.bills.subtitle">Ne manquez aucune échéance
+                    </h3>
+                    <p data-i18n="about.features.bills.desc">Centralisez le suivi de vos charges récurrentes et gérez
+                        vos périodes d'essai gratuites.</p>
+                    <div class="tip-box gold">
+                        <i class="fas fa-calendar-check"></i>
+                        <p data-i18n="about.features.bills.use">Rappels automatiques avant les prélèvements et détection
+                            intelligente dans vos transactions.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.bills.future">A venir : Résiliation automatique en
+                        un clic.</p>
+                </div>
+
+                <!-- Support -->
+                <div id="support" class="feature-section fade-in-up">
+                    <div class="feature-icon-header">
+                        <i class="fas fa-headset"></i>
+                        <h2 data-i18n="about.features.support.title">Support & Centre d'aide</h2>
+                    </div>
+                    <h3 class="text-gradient-gold" data-i18n="about.features.support.subtitle">Assistance structurée
+                    </h3>
+                    <p data-i18n="about.features.support.desc">Une équipe à votre écoute pour résoudre vos problèmes
+                        techniques ou financiers directement via des tickets.</p>
+                    <div class="tip-box">
+                        <i class="fas fa-ticket-alt"></i>
+                        <p data-i18n="about.features.support.use">Ouvrez un ticket dans l'app et suivez son état
+                            d'avancement en temps réel.</p>
+                    </div>
+                    <p class="future-tag" data-i18n="about.features.support.future">A venir : Support multilingue
+                        étendu.</p>
+                </div>
+
+                <!-- Conclusion -->
+                <div class="conclusion-box fade-in-up">
+                    <h2 data-i18n="about.conclusion.title">Plus qu'un gestionnaire.</h2>
+                    <p data-i18n="about.conclusion.desc">Kauri allie les traditions communautaires et la technologie de
+                        pointe pour vous donner le contrôle total de votre vie financière.</p>
+                    <a href="index.html#download" class="btn btn-primary" style="margin-top: 2rem;">
+                        <span data-i18n="hero.ctaPrimary">Commencez maintenant</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="download-section" style="padding: 4rem 0;">
+        <div class="container fade-in-up">
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="terms.html" data-i18n="footer.terms">Conditions d'utilisation</a>
+                <a href="privacy.html" data-i18n="footer.privacy">Politique de confidentialité</a>
+            </div>
+
+            <div style="margin-top: 2rem; opacity: 0.5; font-size: 0.8rem;">
+                <i class="fas fa-copyright"></i> <span id="year"></span> Kauri. <span data-i18n="footer.rights">Tous
+                    droits réservés.</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Active link on scroll for about page
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.feature-section');
+            const navLinks = document.querySelectorAll('.side-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Global setLanguage handles about.hero.title now
+    </script>
+</body>
+
+</html>

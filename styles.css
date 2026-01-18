@@ -27,6 +27,38 @@
     --gradient-hero: linear-gradient(135deg, var(--primary-dark) 0%, var(--bg-dark) 100%);
     --gradient-gold: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
     --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    --gradient-premium: linear-gradient(135deg, #059669 0%, #d4af37 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--gradient-gold);
+    z-index: 2000;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 * {
@@ -282,19 +314,270 @@ nav {
 
 .hero-image-container {
     animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(5, 150, 105, 0.3));
 }
 
 @keyframes float {
-    0% {
-        transform: translateY(0px);
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
     }
 
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+@keyframes pulse-gold {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(212, 175, 55, 0);
     }
 
     100% {
-        transform: translateY(0px);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About Page Specific Styles */
+.about-hero {
+    padding: 12rem 0 8rem;
+    background: radial-gradient(circle at 50% 0%, rgba(5, 150, 105, 0.25) 0%, transparent 70%),
+        radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(5, 150, 105, 0.05) 0%, transparent 50%);
+    animation: rotate 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.feature-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.feature-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.sticky-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.side-link {
+    padding: 0.8rem 1.2rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.side-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.side-link.active {
+    background: var(--primary);
+    color: white;
+}
+
+.feature-scroll-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.feature-section {
+    scroll-margin-top: 120px;
+}
+
+.feature-icon-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon-header i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.feature-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0;
+}
+
+.feature-section h3 {
+    font-size: 1.3rem;
+    margin: 1rem 0 1.5rem;
+    font-weight: 600;
+}
+
+.feature-section p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 800px;
+}
+
+.tip-box {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(5, 150, 105, 0.1);
+    border-left: 4px solid var(--primary);
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.tip-box.gold {
+    background: rgba(212, 175, 55, 0.1);
+    border-left-color: var(--secondary);
+}
+
+.tip-box i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.tip-box.gold i {
+    color: var(--secondary);
+}
+
+.tip-box p {
+    color: var(--text-main);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.future-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 99px;
+    font-size: 0.85rem !important;
+    color: var(--secondary) !important;
+    margin-top: 1rem;
+}
+
+.conclusion-box {
+    margin-top: 6rem;
+    padding: 5rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.conclusion-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.1), transparent);
+    pointer-events: none;
+}
+
+/* Responsive About */
+@media (max-width: 1024px) {
+    .feature-layout {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+        /* Space for mobile sticky nav */
+    }
+
+    .feature-sidebar {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .sticky-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        background: transparent;
+        border: none;
+        padding: 0 1rem;
+        scrollbar-width: none;
+    }
+
+    .sticky-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .side-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .about-hero {
+        padding: 10rem 0 4rem;
+    }
+
+    .feature-scroll-content {
+        gap: 5rem;
+    }
+
+    .conclusion-box {
+        padding: 3rem 2rem;
     }
 }
 
