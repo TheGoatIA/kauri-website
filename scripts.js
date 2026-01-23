@@ -51,6 +51,19 @@ const translations = {
             privacy: "Politique de confidentialité",
             rights: "Tous droits réservés."
         },
+        contact: {
+            title: "Contactez-nous",
+            subtitle: "Une question ? Notre équipe est à votre écoute.",
+            nameLabel: "Nom complet",
+            namePlaceholder: "Jean Dupont",
+            emailLabel: "Email",
+            emailPlaceholder: "jean@example.com",
+            messageLabel: "Message",
+            messagePlaceholder: "Comment pouvons-nous vous aider ?",
+            submitBtn: "Envoyer le message",
+            success: "Message envoyé avec succès !",
+            error: "Erreur lors de l'envoi. Veuillez réessayer."
+        },
         about: {
             hero: {
                 title: "L'écosystème ",
@@ -206,6 +219,19 @@ const translations = {
             terms: "Terms of Service",
             privacy: "Privacy Policy",
             rights: "All rights reserved."
+        },
+        contact: {
+            title: "Contact Us",
+            subtitle: "Any questions? Our team is here to help.",
+            nameLabel: "Full Name",
+            namePlaceholder: "John Doe",
+            emailLabel: "Email",
+            emailPlaceholder: "john@example.com",
+            messageLabel: "Message",
+            messagePlaceholder: "How can we help you?",
+            submitBtn: "Send Message",
+            success: "Message sent successfully!",
+            error: "Error sending message. Please try again."
         },
         about: {
             hero: {
@@ -428,6 +454,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
                 document.body.style.overflow = '';
             });
+        });
+    }
+
+    // Contact Form Submission
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                name: contactForm.name.value,
+                email: contactForm.email.value,
+                message: contactForm.message.value,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch('https://formspree.io/f/xkojvzkl', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = translations[currentLang].contact.success;
+                    formStatus.className = 'form-status success';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Failed to send');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                formStatus.textContent = translations[currentLang].contact.error;
+                formStatus.className = 'form-status error';
+            }
         });
     }
 });
