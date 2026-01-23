@@ -460,10 +460,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Contact Form Submission
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
+    const loadingBar = document.getElementById('loading-bar-container');
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+            // Loading State
+            submitBtn.disabled = true;
+            if (loadingBar) loadingBar.style.display = 'block';
+            formStatus.style.display = 'none';
 
             const formData = {
                 name: contactForm.name.value,
@@ -485,6 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     formStatus.textContent = translations[currentLang].contact.success;
                     formStatus.className = 'form-status success';
+                    formStatus.style.display = 'block';
                     contactForm.reset();
                 } else {
                     throw new Error('Failed to send');
@@ -493,6 +502,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error:', error);
                 formStatus.textContent = translations[currentLang].contact.error;
                 formStatus.className = 'form-status error';
+                formStatus.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                if (loadingBar) loadingBar.style.display = 'none';
             }
         });
     }
