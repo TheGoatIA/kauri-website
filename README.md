@@ -6,12 +6,14 @@ Kauri is a smart financial management platform that combines the power of AI and
 
 ## 🌟 Key Features
 
-- **Tontines 2.0**: Securely create and manage tontines with automatic rotation, auctions, and total transparency.
+- **Tontines 2.0**: Securely create and manage tontines with fixed or random rotation, AI-verified payments, and total transparency.
 - **AI Financial Coach**: A personal assistant that analyzes spending, detects subscriptions, and provides 24/7 financial advice.
-- **Smart Budgeting**: Adaptive budgets with real-time alerts tailored to your lifestyle.
-- **Bank-Grade Security**: Industry-standard encryption to keep your financial data safe.
-- **Gamification**: Earn badges and reach new levels by hitting your financial goals.
+- **Smart Capture**: Log expenses via OCR receipt scanning, voice commands, or automatic bank/Mobile Money SMS import.
+- **Smart Budgeting & Goals**: Adaptive, shareable budgets and savings goals with real-time alerts and round-up savings.
+- **Bank-Grade Security**: AES-256 encryption, KYC identity verification, and real-time fraud monitoring.
+- **Gamification**: Earn badges and reach new levels by hitting your financial goals and challenges.
 - **Multi-Currency**: Effortlessly manage finances in XAF, EUR, and USD with real-time conversion.
+- **Shared Subscriptions (Reseller Hub)**: Split or resell premium subscriptions (Netflix, Spotify, Canva...) within the Kauri community.
 
 ## 🚀 Tech Stack
 
@@ -35,7 +37,7 @@ Kauri is a smart financial management platform that combines the power of AI and
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/kauri-website.git
+   git clone https://github.com/TheGoatIA/kauri-website.git
    ```
 2. **Open in Browser**:
    Simply open `index.html` in your preferred web browser or use a local development server like VS Code Live Server.

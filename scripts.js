@@ -28,17 +28,21 @@ const translations = {
         features: {
             title: "Tout ce dont vous avez besoin.",
             tontineTitle: "Tontines 2.0",
-            tontineDesc: "Créez et gérez vos tontines en toute sécurité. Rotation automatique, enchères, et transparence totale.",
+            tontineDesc: "Créez et gérez vos tontines en toute sécurité. Rotation fixe ou aléatoire, validation IA des paiements et transparence totale.",
             aiTitle: "Coach Financier IA",
             aiDesc: "Un assistant personnel qui analyse vos dépenses, détecte vos abonnements et vous conseille 24/7.",
+            smartCaptureTitle: "Saisie Intelligente",
+            smartCaptureDesc: "Scannez un reçu (OCR), parlez à Kauri ou laissez vos SMS bancaires créer vos dépenses automatiquement.",
             budgetTitle: "Budgétisation Intelligente",
-            budgetDesc: "Des budgets qui s'adaptent à votre style de vie. Alertes de dépassement.",
+            budgetDesc: "Des budgets et objectifs qui s'adaptent à votre style de vie, seul ou à plusieurs. Alertes de dépassement et épargne par arrondi.",
             securityTitle: "Sécurité Bancaire",
-            securityDesc: "Vos données sont cryptées et protégées par les meilleurs standards.",
+            securityDesc: "Données cryptées (AES-256), identité vérifiée (KYC) et surveillance anti-fraude en temps réel.",
             gamificationTitle: "Défis & Gamification",
             gamificationDesc: "Gagnez des badges et progressez dans vos niveaux en atteignant vos objectifs.",
             multiCurrencyTitle: "Multi-Devises",
-            multiCurrencyDesc: "Gérez vos finances en XAF, EUR, USD avec conversion en temps réel."
+            multiCurrencyDesc: "Gérez vos finances en XAF, EUR, USD avec conversion en temps réel.",
+            resellerTitle: "Abonnements Partagés",
+            resellerDesc: "Partagez et rentabilisez vos abonnements Netflix, Spotify ou Canva via notre marketplace sécurisée."
         },
         download: {
             title: "Prêt à transformer vos finances ?",
@@ -81,27 +85,28 @@ const translations = {
                 premium: "Premium",
                 invest: "Investissements",
                 bills: "Factures",
+                reseller: "Abonnements Partagés",
                 support: "Support"
             },
             features: {
                 security: {
                     title: "Authentification & Sécurité",
                     subtitle: "Protection de niveau bancaire",
-                    desc: "La sécurité est au cœur de Kauri. Nous utilisons l'authentification multi-facteurs (MFA) pour garantir que vous seul accédez à vos comptes. Connectez-vous via votre email, votre numéro de téléphone ou vos comptes Google/Apple. Une fois connecté, activez la biométrie (FaceID ou Empreinte) pour sécuriser chaque accès sensible sans avoir à retaper votre mot de passe.",
-                    use: "Toutes vos données sont cryptées de bout en bout et nous ne partageons jamais vos informations personnelles avec des tiers.",
+                    desc: "La sécurité est au cœur de Kauri. Nous utilisons l'authentification multi-facteurs (MFA), la vérification d'identité (KYC) et une détection de fraude en temps réel pour garantir que vous seul accédez à vos comptes. Connectez-vous via votre email, votre numéro de téléphone ou vos comptes Google/Apple. Une fois connecté, activez la biométrie (FaceID ou Empreinte) pour sécuriser chaque accès sensible, et suivez ou révoquez vos sessions actives depuis vos réglages à tout moment.",
+                    use: "Toutes vos données sont cryptées de bout en bout (AES-256) et nous ne partageons jamais vos informations personnelles avec des tiers.",
                     future: "Prochainement : Passkeys pour une connexion sans mot de passe ultra-sécurisée."
                 },
                 transactions: {
                     title: "Gestion des Transactions",
                     subtitle: "Saisie intelligente multi-format",
-                    desc: "Finie la corvée des reçus égarés. Kauri propose trois modes de saisie uniques : manuelle pour la précision, OCR pour scanner instantanément vos tickets de caisse via l'appareil photo, et vocale. Grâce au traitement du langage naturel (NLP), vous pouvez simplement dire 'J'ai dépensé 15 000 francs pour le restaurant ce midi' et l'IA créera la dépense avec la bonne catégorie.",
+                    desc: "Finie la corvée des reçus égarés. Kauri propose plusieurs modes de saisie : manuelle pour la précision, OCR pour scanner instantanément vos tickets de caisse via l'appareil photo, vocale grâce au traitement du langage naturel, et import automatique depuis vos SMS bancaires et Mobile Money. Vous pouvez simplement dire 'J'ai dépensé 15 000 francs pour le restaurant ce midi' et l'IA créera la dépense avec la bonne catégorie.",
                     use: "L'IA catégorise automatiquement vos dépenses (Santé, Loisirs, Alimentation) pour vous donner une vue claire.",
-                    future: "Prochainement : Synchronisation bancaire automatique pour un suivi passif."
+                    future: "Prochainement : Synchronisation bancaire automatique (Open Banking) pour un suivi passif."
                 },
                 tontines: {
                     title: "Tontines (Moneypools)",
                     subtitle: "L'épargne sociale réinventée",
-                    desc: "Digitalisez vos cercles de confiance. Créez des tontines avec vos proches, définissez les montants de cotisation et la fréquence (hebdomadaire, mensuelle). Kauri gère tout l'aspect administratif : suivi des paiements, rappels automatiques, et gestion des tours. Vous pouvez opter pour une rotation fixe, aléatoire ou même un système d'enchères pour libérer les fonds selon les besoins.",
+                    desc: "Digitalisez vos cercles de confiance. Créez des tontines avec vos proches, définissez les montants de cotisation et la fréquence (hebdomadaire, mensuelle). Kauri gère tout l'aspect administratif : suivi des paiements avec vérification IA des preuves de versement, rappels automatiques, pénalités de retard et gestion des tours selon une rotation fixe ou aléatoire.",
                     use: "Un coffre-fort transparent où chaque membre voit les contributions en temps réel pour une confiance totale.",
                     future: "Prochainement : Smart Contracts pour l'exécution automatique des versements fonds via Blockchain."
                 },
@@ -114,10 +119,10 @@ const translations = {
                 },
                 budget: {
                     title: "Budgets & Objectifs",
-                    subtitle: "Maîtrisez chaque franc",
-                    desc: "Fixez des limites claires par catégorie (ex: Alimentation) et suivez leur consommation en temps réel grâce à des jauges visuelles. Parallèlement, créez des objectifs financiers concrets comme 'Achat voiture' ou 'Vacances'. Kauri calcule automatiquement la part de vos revenus que vous devriez mettre de côté chaque mois pour atteindre ces rêves dans les délais fixés.",
-                    use: "Recevez des notifications immédiates si vous dépassez 80% d'un budget pour éviter les imprévus.",
-                    future: "Prochainement : Épargne automatique par arrondi lors de chaque transaction."
+                    subtitle: "Maîtrisez chaque franc, seul ou à plusieurs",
+                    desc: "Fixez des limites claires par catégorie (ex: Alimentation) et suivez leur consommation en temps réel grâce à des jauges visuelles. Parallèlement, créez des objectifs financiers concrets comme 'Achat voiture' ou 'Vacances', et invitez vos proches à cotiser au même objectif ou budget via un simple code d'invitation. Kauri calcule automatiquement la part de vos revenus à mettre de côté chaque mois pour atteindre vos rêves dans les délais fixés.",
+                    use: "Recevez des notifications immédiates si vous dépassez 80% d'un budget, et activez l'épargne automatique par arrondi sur chaque transaction.",
+                    future: "Prochainement : Suggestions de budget automatiques basées sur votre historique de dépenses."
                 },
                 gamification: {
                     title: "Défis & Récompenses",
@@ -129,16 +134,16 @@ const translations = {
                 analytics: {
                     title: "Analyses & Rapports",
                     subtitle: "La science de votre argent",
-                    desc: "Visualisez vos flux financiers à travers des graphiques spectaculaires et interactifs. Kauri génère des heatmaps de vos dépenses, des diagrammes de répartition par catégorie et des courbes d'évolution de votre patrimoine. Recevez des rapports hebdomadaires et mensuels détaillés qui résument vos progrès et mettent en lumière vos plus grosses économies.",
+                    desc: "Visualisez vos flux financiers à travers des graphiques spectaculaires et interactifs. Kauri calcule votre Score de Santé Financière, prévoit votre trésorerie sur les 30 prochains jours et vous laisse simuler l'impact d'une décision ('Et si je dépensais 50 000 francs de plus ce mois-ci ?') avant de la prendre. Recevez aussi des rapports hebdomadaires et mensuels exportables qui résument vos progrès.",
                     use: "Identifiez en un coup d'œil où part votre argent pour prendre des décisions plus éclairées.",
-                    future: "Prochainement : Prédictions de solde futur basées sur vos dépenses récurrentes (Machine Learning)."
+                    future: "Prochainement : Recommandations d'investissement personnalisées selon votre profil de risque."
                 },
                 premium: {
                     title: "Abonnements Premium",
                     subtitle: "Débloquez tout le potentiel",
                     desc: "Passez au niveau supérieur avec Kauri Premium. Bénéficiez de la reconnaissance OCR illimitée pour vos reçus, d'une analyse IA plus approfondie et de la possibilité de créer un nombre illimité de tontines et de budgets. Le mode Premium supprime également toutes les publicités et vous donne un accès prioritaire à notre support client VIP pour toutes vos questions complexes.",
                     use: "L'investissement Premium est rapidement rentabilisé par les économies que vous ferez grâce aux outils avancés.",
-                    future: "Prochainement : Accès multi-utilisateur pour les couples ou familles."
+                    future: "Prochainement : Cashback exclusif chez nos marchands partenaires."
                 },
                 invest: {
                     title: "Placements & Actifs",
@@ -153,6 +158,13 @@ const translations = {
                     desc: "Kauri détecte automatiquement vos abonnements récurrents (Netflix, Spotify, assurances) dans votre historique de transactions. L'application vous alerte avant chaque prélèvement pour que vous ne soyez jamais surpris par une facture. Elle suit également les périodes d'essai gratuit pour vous rappeler de les résilier avant qu'elles ne deviennent payantes.",
                     use: "Visualisez le coût annuel total de vos abonnements pour trier ce qui est vraiment nécessaire.",
                     future: "Prochainement : Assistant de résiliation en un clic directement depuis l'application."
+                },
+                reseller: {
+                    title: "Partage d'Abonnements",
+                    subtitle: "Le Reseller Hub Kauri",
+                    desc: "Divisez le coût de vos abonnements premium (Netflix, Spotify, Disney+, Canva et bien d'autres) avec la communauté Kauri. Rejoignez un emplacement disponible sur un compte partagé en toute sécurité, ou devenez revendeur et générez un revenu complémentaire en gérant vos propres comptes partagés depuis l'application.",
+                    use: "Chaque emplacement est facturé automatiquement et les identifiants sont stockés de façon chiffrée : ni vous, ni le revendeur n'avez à les partager en clair.",
+                    future: "Prochainement : Extension du catalogue à de nouveaux services et paiement automatique par crédit Kauri."
                 },
                 support: {
                     title: "Support & Centre d'aide",
@@ -197,17 +209,21 @@ const translations = {
         features: {
             title: "Everything you need.",
             tontineTitle: "Tontines 2.0",
-            tontineDesc: "Create and manage tontines securely. Automatic rotation, auctions, and total transparency.",
+            tontineDesc: "Create and manage tontines securely. Fixed or random rotation, AI-verified payments, and total transparency.",
             aiTitle: "AI Financial Coach",
             aiDesc: "A personal assistant that analyzes spending, detects subscriptions, and advises you 24/7.",
+            smartCaptureTitle: "Smart Capture",
+            smartCaptureDesc: "Scan a receipt (OCR), talk to Kauri, or let your bank SMS create your expenses automatically.",
             budgetTitle: "Smart Budgeting",
-            budgetDesc: "Budgets that adapt to your lifestyle. Real-time alerts.",
+            budgetDesc: "Budgets and goals that adapt to your lifestyle, solo or shared. Overspend alerts and round-up savings.",
             securityTitle: "Bank-Grade Security",
-            securityDesc: "Your data is encrypted and protected by top industry standards.",
+            securityDesc: "AES-256 encrypted data, verified identity (KYC), and real-time fraud monitoring.",
             gamificationTitle: "Challenges & Gamification",
             gamificationDesc: "Earn badges and level up as you reach your financial goals.",
             multiCurrencyTitle: "Multi-Currency",
-            multiCurrencyDesc: "Manage finances in XAF, EUR, USD with real-time conversion."
+            multiCurrencyDesc: "Manage finances in XAF, EUR, USD with real-time conversion.",
+            resellerTitle: "Shared Subscriptions",
+            resellerDesc: "Split and profit from your Netflix, Spotify, or Canva subscriptions through our secure marketplace."
         },
         download: {
             title: "Ready to transform your finances?",
@@ -250,27 +266,28 @@ const translations = {
                 premium: "Premium",
                 invest: "Investments",
                 bills: "Bills",
+                reseller: "Shared Subscriptions",
                 support: "Support"
             },
             features: {
                 security: {
                     title: "Auth & Security",
                     subtitle: "Bank-level protection",
-                    desc: "Security is at the core of Kauri. We use multi-factor authentication (MFA) to ensure that only you can access your accounts. Log in via email, phone, or Google/Apple accounts. Once logged in, enable biometrics (FaceID or Fingerprint) to secure every sensitive access without re-typing your password.",
-                    use: "All your data is encrypted end-to-end, and we never share your personal information with third parties.",
+                    desc: "Security is at the core of Kauri. We use multi-factor authentication (MFA), identity verification (KYC), and real-time fraud detection to ensure that only you can access your accounts. Log in via email, phone, or Google/Apple accounts. Once logged in, enable biometrics (FaceID or Fingerprint) to secure every sensitive access, and view or revoke your active sessions from your settings at any time.",
+                    use: "All your data is encrypted end-to-end (AES-256), and we never share your personal information with third parties.",
                     future: "Coming soon: Passkeys for ultra-secure, passwordless login."
                 },
                 transactions: {
                     title: "Transaction Management",
                     subtitle: "Intelligent multi-format entry",
-                    desc: "No more lost receipts. Kauri offers three unique entry modes: manual for precision, OCR to instantly scan receipts via camera, and voice. Thanks to natural language processing (NLP), you can simply say 'I spent 15,000 francs for lunch today' and the AI will create the expense with the correct category.",
+                    desc: "No more lost receipts. Kauri offers several entry modes: manual for precision, OCR to instantly scan receipts via camera, voice thanks to natural language processing, and automatic import from your bank and Mobile Money SMS. You can simply say 'I spent 15,000 francs for lunch today' and the AI will create the expense with the correct category.",
                     use: "AI automatically categorizes your spending (Health, Leisure, Food) to give you a clear overview.",
-                    future: "Coming soon: Automatic bank sync for passive tracking."
+                    future: "Coming soon: Automatic bank sync (Open Banking) for passive tracking."
                 },
                 tontines: {
                     title: "Tontines (Moneypools)",
                     subtitle: "Social saving reinvented",
-                    desc: "Digitize your circles of trust. Create tontines with loved ones, set contribution amounts and frequency (weekly, monthly). Kauri handles all administration: payment tracking, automatic reminders, and rotation management. Choose between fixed, random, or auction-based fund release according to needs.",
+                    desc: "Digitize your circles of trust. Create tontines with loved ones, set contribution amounts and frequency (weekly, monthly). Kauri handles all administration: payment tracking with AI-verified proof of payment, automatic reminders, late penalties, and rotation management, fixed or random.",
                     use: "A transparent vault where every member sees contributions in real-time for total trust.",
                     future: "Coming soon: Smart Contracts for automatic fund distribution via Blockchain."
                 },
@@ -283,10 +300,10 @@ const translations = {
                 },
                 budget: {
                     title: "Budgets & Goals",
-                    subtitle: "Master every penny",
-                    desc: "Set clear limits by category (e.g., Food) and track them in real-time with visual gauges. Simultaneously, create concrete financial goals like 'Buy a Car' or 'Vacation'. Kauri automatically calculates how much income you should save monthly to achieve these dreams on schedule.",
-                    use: "Receive immediate notifications if you exceed 80% of a budget to avoid surprises.",
-                    future: "Coming soon: Automatic round-up savings on every transaction."
+                    subtitle: "Master every penny, solo or together",
+                    desc: "Set clear limits by category (e.g., Food) and track them in real-time with visual gauges. Create concrete financial goals like 'Buy a Car' or 'Vacation', and invite loved ones to contribute to the same goal or budget with a simple invite code. Kauri automatically calculates how much income you should save monthly to achieve your dreams on schedule.",
+                    use: "Receive immediate notifications if you exceed 80% of a budget, and turn on automatic round-up savings on every transaction.",
+                    future: "Coming soon: Automatic budget suggestions based on your spending history."
                 },
                 gamification: {
                     title: "Challenges & Rewards",
@@ -298,16 +315,16 @@ const translations = {
                 analytics: {
                     title: "Analytics & Reports",
                     subtitle: "The science of your money",
-                    desc: "Visualize your financial flow through spectacular interactive charts. Kauri generates spending heatmaps, category breakdown diagrams, and wealth evolution curves. receive detailed weekly and monthly reports summarizing your progress and highlighting your biggest savings.",
+                    desc: "Visualize your financial flow through spectacular interactive charts. Kauri computes your Financial Health Score, forecasts your cashflow for the next 30 days, and lets you simulate the impact of a decision ('What if I spent 50,000 francs more this month?') before you make it. You also get exportable weekly and monthly reports summarizing your progress.",
                     use: "Identify at a glance where your money goes to make more informed decisions.",
-                    future: "Coming soon: Future balance predictions based on recurring spending (Machine Learning)."
+                    future: "Coming soon: Personalized investment recommendations based on your risk profile."
                 },
                 premium: {
                     title: "Premium Subscriptions",
                     subtitle: "Unlock full potential",
                     desc: "Take it to the next level with Kauri Premium. Benefit from unlimited OCR receipt recognition, deeper AI analysis, and the ability to create unlimited tontines and budgets. Premium mode also removes all ads and gives you priority access to our VIP customer support for complex queries.",
                     use: "The Premium investment quickly pays for itself through the savings made using advanced tools.",
-                    future: "Coming soon: Multi-user access for couples or families."
+                    future: "Coming soon: Exclusive cashback with our partner merchants."
                 },
                 invest: {
                     title: "Assets & Investments",
@@ -322,6 +339,13 @@ const translations = {
                     desc: "Kauri automatically detects recurring subscriptions (Netflix, Spotify, insurance) in your transaction history. The app alerts you before each charge so you're never surprised by a bill. it also tracks free trial periods to remind you to cancel before they become paid.",
                     use: "Visualize the total annual cost of your subscriptions to filter what's truly necessary.",
                     future: "Coming soon: One-click cancellation assistant directly from the app."
+                },
+                reseller: {
+                    title: "Shared Subscriptions",
+                    subtitle: "The Kauri Reseller Hub",
+                    desc: "Split the cost of your premium subscriptions (Netflix, Spotify, Disney+, Canva, and more) with the Kauri community. Join an available slot on a shared account securely, or become a reseller and earn extra income by managing your own shared accounts right from the app.",
+                    use: "Every slot is billed automatically and credentials are stored encrypted: neither you nor the reseller ever have to share them in the clear.",
+                    future: "Coming soon: Expanded service catalog and automatic billing via Kauri credit."
                 },
                 support: {
                     title: "Support & Help Center",
