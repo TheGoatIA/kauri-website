@@ -63,7 +63,11 @@ jobs:
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
+            set -e
             cd /var/www/kauri/website-app
+            # Authenticate explicitly: the server shares ghcr.io credentials with the other
+            # pipelines, whose short-lived tokens expire and would make this pull fail.
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             docker compose pull
             docker compose up -d
             sleep 3

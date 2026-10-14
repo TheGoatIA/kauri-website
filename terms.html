@@ -5,7 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kauri - Conditions d'Utilisation</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- SEO & Social Metadata (fr) -->
+    <meta name="description" content="Consultez les conditions générales d'utilisation de l'application Kauri.">
+    <link rel="canonical" href="https://kauri-app.com/terms.html">
+    <link rel="alternate" hreflang="fr" href="https://kauri-app.com/terms.html">
+    <link rel="alternate" hreflang="en" href="https://kauri-app.com/en/terms.html">
+    <link rel="alternate" hreflang="x-default" href="https://kauri-app.com/terms.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kauri">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="Kauri - Conditions d'Utilisation">
+    <meta property="og:description" content="Consultez les conditions générales d'utilisation de l'application Kauri.">
+    <meta property="og:url" content="https://kauri-app.com/terms.html">
+    <meta property="og:image" content="https://kauri-app.com/og-fr.jpg">
+    <meta property="og:image:secure_url" content="https://kauri-app.com/og-fr.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kauri - application de gestion financière intelligente">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kauri - Conditions d'Utilisation">
+    <meta name="twitter:description" content="Consultez les conditions générales d'utilisation de l'application Kauri.">
+    <meta name="twitter:image" content="https://kauri-app.com/og-fr.jpg">
+    <meta name="twitter:image:alt" content="Kauri - application de gestion financière intelligente">
+
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -73,7 +100,7 @@
     </style>
 </head>
 
-<body>
+<body data-title-fr="Conditions d'Utilisation" data-title-en="Terms of Service" data-default-lang="fr">
     <nav class="nav-fixed">
         <div class="container nav-content">
             <a href="index.html" class="logo">
@@ -81,8 +108,8 @@
                 <span>KAURI</span>
             </a>
             <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLang('fr')">FR</button>
-                <button class="lang-btn" onclick="setLang('en')">EN</button>
+                <button class="lang-btn active" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
             </div>
         </div>
     </nav>
@@ -226,17 +253,7 @@
         </div>
     </div>
 
-    <script>
-        function setLang(lang) {
-            document.getElementById('content-fr').style.display = lang === 'fr' ? 'block' : 'none';
-            document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
-            document.getElementById('page-title').textContent = lang === 'fr' ? "Conditions d'Utilisation" : 'Terms of Service';
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
-            });
-            document.documentElement.lang = lang;
-        }
-    </script>
+    <script src="/legal.js"></script>
 </body>
 
 </html>

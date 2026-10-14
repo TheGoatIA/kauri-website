@@ -5,8 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À Propos - Kauri</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <!-- SEO & Social Metadata (fr) -->
+    <meta name="description" content="Découvrez l'écosystème Kauri : coach IA, tontines, budgets, objectifs et sécurité des données pour sécuriser et structurer votre argent.">
+    <link rel="canonical" href="https://kauri-app.com/about.html">
+    <link rel="alternate" hreflang="fr" href="https://kauri-app.com/about.html">
+    <link rel="alternate" hreflang="en" href="https://kauri-app.com/en/about.html">
+    <link rel="alternate" hreflang="x-default" href="https://kauri-app.com/about.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kauri">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="À Propos - Kauri">
+    <meta property="og:description" content="Découvrez l'écosystème Kauri : coach IA, tontines, budgets, objectifs et sécurité des données pour sécuriser et structurer votre argent.">
+    <meta property="og:url" content="https://kauri-app.com/about.html">
+    <meta property="og:image" content="https://kauri-app.com/og-fr.jpg">
+    <meta property="og:image:secure_url" content="https://kauri-app.com/og-fr.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Kauri - application de gestion financière intelligente">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="À Propos - Kauri">
+    <meta name="twitter:description" content="Découvrez l'écosystème Kauri : coach IA, tontines, budgets, objectifs et sécurité des données pour sécuriser et structurer votre argent.">
+    <meta name="twitter:image" content="https://kauri-app.com/og-fr.jpg">
+    <meta name="twitter:image:alt" content="Kauri - application de gestion financière intelligente">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/x-icon" href="/logo.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -344,31 +371,8 @@
         </div>
     </section>
 
-    <script src="scripts.js"></script>
-    <script>
-        // Active link on scroll for about page
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.feature-section');
-            const navLinks = document.querySelectorAll('.side-link');
-
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Global setLanguage handles about.hero.title now
-    </script>
+    <script src="/scripts.js"></script>
+    <script src="/about.js"></script>
 </body>
 
 </html>

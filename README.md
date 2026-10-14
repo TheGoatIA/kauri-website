@@ -24,14 +24,28 @@ Kauri is a smart financial management platform that combines the power of AI and
 ## 📂 Project Structure
 
 ```text
-├── index.html          # Main landing page
-├── styles.css         # Styling and design system
-├── scripts.js        # Core logic and internationalization
-├── manifest.json      # PWA manifest
-├── privacy.html      # Privacy Policy
-├── terms.html        # Terms of Service
-└── assets/           # Images and brand identity
+├── index.html            # Landing page (French, served at /)
+├── about.html            # About / features page
+├── privacy.html          # Privacy Policy
+├── terms.html            # Terms of Service
+├── en/                   # English versions of the four pages (served under /en/)
+├── styles.css            # Styling and design system
+├── scripts.js            # Core logic and internationalization
+├── legal.js              # Language switch for privacy / terms
+├── about.js              # Scroll-spy for the about page
+├── manifest.json         # PWA manifest
+├── logo.png, og-fr.jpg, og-en.jpg, app_screenshot.png
+├── nginx.conf            # nginx server config (routing, caching)
+├── security-headers.conf # CSP / HSTS / security headers (included by nginx.conf)
+├── Dockerfile            # nginx:alpine image serving the static site
+└── .github/workflows/deploy.yml  # Build → GHCR → SSH deploy (push on main)
 ```
+
+## 🔒 Security Notes
+
+- A strict **Content-Security-Policy** is sent by nginx: no inline `<script>` and no inline event handlers are allowed. Add behaviour in `scripts.js` / a dedicated `.js` file, never inline.
+- Allowed third parties: Google Fonts, cdnjs (Font Awesome) and Formspree (contact form). Any new external resource must be added to `security-headers.conf`.
+- TLS is terminated by the reverse proxy in front of the container (HSTS is sent by the site).
 
 ## 🛠️ Local Development
 
@@ -39,8 +53,9 @@ Kauri is a smart financial management platform that combines the power of AI and
    ```bash
    git clone https://github.com/TheGoatIA/kauri-website.git
    ```
-2. **Open in Browser**:
-   Simply open `index.html` in your preferred web browser or use a local development server like VS Code Live Server.
+2. **Run it**:
+   - Quick look: open `index.html` in a browser, or serve the folder with any static server (e.g. VS Code Live Server). The English URLs (`/en/`) need a server, not `file://`.
+   - Production-like (nginx, CSP, routing): `docker build -t kauri-website . && docker run --rm -p 8080:80 kauri-website`, then open <http://localhost:8080>.
 
 ## 🌍 Languages
 

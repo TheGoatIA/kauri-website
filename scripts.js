@@ -404,6 +404,14 @@ function setLanguage(lang) {
     }
 }
 
+// Keep the address bar on the language-specific URL (/ for FR, /en/ for EN)
+// so that a copied or shared link carries the matching social metadata.
+function syncLangUrl(lang) {
+    if (!location.protocol.startsWith('http')) return;
+    const path = location.pathname.indexOf('/en/') === 0 ? location.pathname.slice(3) : location.pathname;
+    history.replaceState(null, '', (lang === 'en' ? '/en' : '') + path + location.search + location.hash);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Dynamic Year
     const yearEl = document.getElementById('year');
@@ -447,11 +455,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize Language
-    setLanguage('fr');
+    setLanguage(document.documentElement.lang === 'en' ? 'en' : 'fr');
 
     // Language Switch Listeners
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        btn.addEventListener('click', () => {
+            setLanguage(btn.dataset.lang);
+            syncLangUrl(btn.dataset.lang);
+        });
     });
 
     // Mobile Menu Toggle
