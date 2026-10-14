@@ -47,6 +47,25 @@ Kauri is a smart financial management platform that combines the power of AI and
 - Allowed third parties: Google Fonts, cdnjs (Font Awesome) and Formspree (contact form). Any new external resource must be added to `security-headers.conf`.
 - TLS is terminated by the reverse proxy in front of the container (HSTS is sent by the site).
 
+## 🏗️ Architecture & Deployment
+
+```mermaid
+flowchart LR
+  V[Visitor] -->|HTTPS| APACHE[Host reverse proxy<br/>TLS Let's Encrypt]
+  APACHE -->|127.0.0.1| NGINX[nginx:alpine container<br/>static files + security headers]
+  GH[push on main] --> CI[GitHub Actions<br/>build image → GHCR]
+  CI -->|SSH| VPS[VPS: docker pull + restart]
+```
+
+- The site is 100 % static; nginx serves it with a strict CSP (`security-headers.conf`), HSTS (1 year, no `includeSubDomains`) and cache rules (`nginx.conf`).
+- `.github/workflows/deploy.yml` builds the image, pushes it to `ghcr.io/thegoatia` and redeploys over SSH. **A push on `main` is a production deployment** — work on a branch/`dev` and merge through a Pull Request.
+- Required secrets: `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`.
+- Legal pages (`privacy`, `terms`) are referenced by the mobile app and the stores: keep their URLs stable.
+
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## 🛠️ Local Development
 
 1. **Clone the repository**:
